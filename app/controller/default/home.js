@@ -2,7 +2,7 @@
  * @Author: DaZheng
  * @Date: 2020-12-02 16:23:57
  * @LastEditors: g05047
- * @LastEditTime: 2020-12-02 22:14:03
+ * @LastEditTime: 2020-12-02 23:43:55
  * @Description: file content
  */
 
@@ -34,7 +34,7 @@ class HomeController extends Controller {
               'article.article_content as article_content ,' +
               "FROM_UNIXTIME(article.addTime, '%Y-%m-%d %H:%i:%s') as addTime ," +
               'article.view_count as view_count ,' +
-              'type.typeName as typeName ' +
+              'type.typeName as typeName ,' +
               'type.id as typeId ' +
               'FROM article LEFT JOIN type ON article.type_id = type.Id ' +
               'WHERE article.id=' + id

@@ -2,7 +2,7 @@
  * @Author: DaZheng
  * @Date: 2020-12-02 15:45:37
  * @LastEditors: g05047
- * @LastEditTime: 2020-12-02 20:22:51
+ * @LastEditTime: 2020-12-02 23:36:06
  * @Description: file content
  */
 /* eslint valid-jsdoc: "off" */
@@ -48,6 +48,18 @@ module.exports = appInfo => {
     app: true,
     // load into agent, default is close
     agent: false,
+  };
+
+  config.security = {
+    scrf: {
+      enable: false
+    },
+    domainWhiteList: ['*']
+  };
+
+  config.cors = {
+    origin: '*',
+    allowMethods: 'GET, HEAD, PUT, POST, DELETE, PATCH, OPTIONS'
   };
 
   return {

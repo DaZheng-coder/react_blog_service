@@ -1,3 +1,10 @@
+/*
+ * @Author: DaZheng
+ * @Date: 2020-12-02 15:45:37
+ * @LastEditors: g05047
+ * @LastEditTime: 2020-12-02 20:22:51
+ * @Description: file content
+ */
 /* eslint valid-jsdoc: "off" */
 
 'use strict';
@@ -21,6 +28,26 @@ module.exports = appInfo => {
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
+  };
+
+  config.mysql = {
+    // database configuration
+    client: {
+      // host
+      host: 'localhost',
+      // port
+      port: '3306',
+      // username
+      user: 'root',
+      // password
+      password: '888888',
+      // database
+      database: 'react_blog',    
+    },
+    // load into app, default is open
+    app: true,
+    // load into agent, default is close
+    agent: false,
   };
 
   return {

@@ -2,7 +2,7 @@
  * @Author: DaZheng
  * @Date: 2020-12-02 16:27:27
  * @LastEditors: g05047
- * @LastEditTime: 2020-12-02 23:41:34
+ * @LastEditTime: 2020-12-03 12:47:32
  * @Description: file content
  */
 
@@ -13,4 +13,5 @@ module.exports = app => {
   router.get('/default/index', controller.default.home.index)
   router.get('/default/getArticleList', controller.default.home.getArticleList)
   router.get('/default/getArticleById/:id', controller.default.home.getArticleById)
+  router.get('/default/getTypeInfo', controller.default.home.getTypeInfo)
 }

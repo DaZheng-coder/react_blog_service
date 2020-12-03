@@ -2,7 +2,7 @@
  * @Author: DaZheng
  * @Date: 2020-12-02 16:23:57
  * @LastEditors: g05047
- * @LastEditTime: 2020-12-02 23:43:55
+ * @LastEditTime: 2020-12-03 12:16:35
  * @Description: file content
  */
 
@@ -40,6 +40,12 @@ class HomeController extends Controller {
               'WHERE article.id=' + id
     const result = await this.app.mysql.query(sql)
     this.ctx.body = {data:result}
+  }
+
+  // 得到类别名称和编号
+  async getTypeInfo () {
+    const result = await this.app.mysql.select('type')
+    this.ctx.body = { data: result }
   }
 
 }

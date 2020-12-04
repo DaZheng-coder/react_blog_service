@@ -2,7 +2,7 @@
  * @Author: DaZheng
  * @Date: 2020-12-02 15:45:37
  * @LastEditors: g05047
- * @LastEditTime: 2020-12-02 16:31:07
+ * @LastEditTime: 2020-12-04 10:33:37
  * @Description: file content
  */
 'use strict';
@@ -12,5 +12,6 @@
  */
 module.exports = app => {
   require('./router/default')(app)
+  require('./router/admin')(app)
 };
 

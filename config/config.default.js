@@ -2,7 +2,7 @@
  * @Author: DaZheng
  * @Date: 2020-12-02 15:45:37
  * @LastEditors: g05047
- * @LastEditTime: 2020-12-02 23:36:06
+ * @LastEditTime: 2020-12-04 15:59:26
  * @Description: file content
  */
 /* eslint valid-jsdoc: "off" */
@@ -51,14 +51,15 @@ module.exports = appInfo => {
   };
 
   config.security = {
-    scrf: {
+    csrf: {
       enable: false
     },
     domainWhiteList: ['*']
   };
 
   config.cors = {
-    origin: '*',
+    origin: 'http://localhost:3000',
+    credentials: true, //允许cook可以跨域
     allowMethods: 'GET, HEAD, PUT, POST, DELETE, PATCH, OPTIONS'
   };
 

@@ -2,7 +2,7 @@
  * @Author: DaZheng
  * @Date: 2020-12-04 10:29:06
  * @LastEditors: g05047
- * @LastEditTime: 2020-12-04 14:35:34
+ * @LastEditTime: 2020-12-04 16:16:26
  * @Description: file content
  */
 'use strict'
@@ -24,6 +24,12 @@ class MainController extends Controller {
     } else {
       this.ctx.body = {'data': '登录失败'}
     }
+  }
+
+  // 获得类型信息
+  async getTypeInfo () {
+    const resType = await this.app.mysql.select('type')
+    this.ctx.body = {data: resType}
   }
 }
 

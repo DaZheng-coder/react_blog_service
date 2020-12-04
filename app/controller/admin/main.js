@@ -2,7 +2,7 @@
  * @Author: DaZheng
  * @Date: 2020-12-04 10:29:06
  * @LastEditors: g05047
- * @LastEditTime: 2020-12-04 16:16:26
+ * @LastEditTime: 2020-12-04 22:32:16
  * @Description: file content
  */
 'use strict'
@@ -30,6 +30,29 @@ class MainController extends Controller {
   async getTypeInfo () {
     const resType = await this.app.mysql.select('type')
     this.ctx.body = {data: resType}
+  }
+
+  // 添加文章
+  async addArticle () {
+    let tmpArticle = this.ctx.request.body
+    const result = await this.app.mysql.insert('article', tmpArticle)
+    const insertSuccess = result.affectedRows === 1
+    const insertId = result.insertId
+    this.ctx.body = {
+      // 是否插入成功
+      isSuccess: insertSuccess,
+      // 返回id
+      insertId: insertId   
+    }
+  }
+
+  async updateArticle () {
+    let tempArticle = this.ctx.request.body
+    const result = await this.app.mysql.update('article', tempArticle)
+    const updateSuccess = result.affectedRows === 1
+    this.ctx.body = {
+      isSuccess: updateSuccess
+    }
   }
 }
 

@@ -2,7 +2,7 @@
  * @Author: DaZheng
  * @Date: 2020-12-04 10:29:06
  * @LastEditors: g05047
- * @LastEditTime: 2020-12-05 12:04:29
+ * @LastEditTime: 2020-12-05 21:56:40
  * @Description: file content
  */
 'use strict'
@@ -71,6 +71,22 @@ class MainController extends Controller {
     let id = this.ctx.params.id
     const res = await this.app.mysql.delete('article', { 'id': id })
     this.ctx.body = { data: res }
+  }
+
+  async getArticleById () {
+    let id = this.ctx.params.id
+    let sql = 'SELECT article.id as id ,' +
+              'article.title as title ,' +
+              'article.introduce as introduce ,' +
+              'article.article_content as article_content ,' + 
+              "FROM_UNIXTIME(article.addTime, '%Y-%m-%d %H:%i:%s') as addTime ," +
+              'article.view_count as view_count ,' +
+              'type.typeName as typeName ,' +
+              'type.id as typeId ' + 
+              'FROM article LEFT JOIN type ON article.type_id = type.id ' +
+              'WHERE article.id=' + id
+    const result = await this.app.mysql.query(sql)
+    this.ctx.body = { data: result }
   }
 }
 

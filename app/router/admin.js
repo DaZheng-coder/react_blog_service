@@ -2,7 +2,7 @@
  * @Author: DaZheng
  * @Date: 2020-12-02 16:27:51
  * @LastEditors: g05047
- * @LastEditTime: 2020-12-05 09:49:54
+ * @LastEditTime: 2020-12-05 11:50:48
  * @Description: file content
  */
 
@@ -16,4 +16,5 @@ module.exports = app => {
   router.post('/admin/addArticle', adminauth, controller.admin.main.addArticle)
   router.post('/admin/updateArticle', adminauth, controller.admin.main.updateArticle)
   router.get('/admin/getArticleList', adminauth, controller.admin.main.getArticleList)
+  router.get('/admin/delArticle/:id', adminauth, controller.admin.main.delArticle)
 }

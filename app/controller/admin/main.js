@@ -2,7 +2,7 @@
  * @Author: DaZheng
  * @Date: 2020-12-04 10:29:06
  * @LastEditors: g05047
- * @LastEditTime: 2020-12-05 10:06:34
+ * @LastEditTime: 2020-12-05 12:04:29
  * @Description: file content
  */
 'use strict'
@@ -65,6 +65,12 @@ class MainController extends Controller {
               'FROM article LEFT JOIN type ON article.type_id = type.id'
     const resList = await this.app.mysql.query(sql)
     this.ctx.body = { list: resList }
+  }
+
+  async delArticle () {
+    let id = this.ctx.params.id
+    const res = await this.app.mysql.delete('article', { 'id': id })
+    this.ctx.body = { data: res }
   }
 }
 

@@ -2,7 +2,7 @@
  * @Author: DaZheng
  * @Date: 2020-12-02 16:27:51
  * @LastEditors: g05047
- * @LastEditTime: 2020-12-04 22:33:02
+ * @LastEditTime: 2020-12-05 09:49:54
  * @Description: file content
  */
 
@@ -15,4 +15,5 @@ module.exports = app => {
   router.get('/admin/getTypeInfo', adminauth, controller.admin.main.getTypeInfo)
   router.post('/admin/addArticle', adminauth, controller.admin.main.addArticle)
   router.post('/admin/updateArticle', adminauth, controller.admin.main.updateArticle)
+  router.get('/admin/getArticleList', adminauth, controller.admin.main.getArticleList)
 }

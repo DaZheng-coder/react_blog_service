@@ -2,7 +2,7 @@
  * @Author: DaZheng
  * @Date: 2020-12-02 15:45:37
  * @LastEditors: g05047
- * @LastEditTime: 2020-12-07 18:20:02
+ * @LastEditTime: 2020-12-07 19:11:09
  * @Description: file content
  */
 /* eslint valid-jsdoc: "off" */
@@ -40,7 +40,7 @@ module.exports = appInfo => {
       // username
       user: 'root',
       // password
-      password: '',
+      password: '888888',
       // database
       database: 'react_blog',    
     },
